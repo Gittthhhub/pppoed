@@ -1,6 +1,6 @@
 # PPPoEd for Windows
 Manage PPPoE session dial-up, re-dial, session daemon etc.    
-LANGUAGE: [简体中文](http://fanyi.baidu.com/transpage?query=https%3A%2F%2Fgitlab.com%2Fdfc643%2Fpppoed%2F-%2Fraw%2Fmaster%2FREADME.md&from=auto&to=zh&source=url&render=1) 
+LANGUAGE: [简体中文](README_ZH.md) 
 
 ## Function
 * Dial up on system boot
