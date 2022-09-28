@@ -16,9 +16,11 @@ namespace PPPoEd
         public string Username { get; set; }
         public string Password { get; set; }
         public int ReDialTimeout { get; set; }
-        
+        public bool Credential { get; set; }
+        public string PbkEntryName { get; set; }
 
-        
+
+
         public PPPoE()
         {
             //__init__
@@ -60,12 +62,22 @@ namespace PPPoEd
         {
             try
             {
-                dialer.PhoneBookPath = Path.Combine(
-                    AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
-                    @"PPPoEd.pbk");
-                dialer.EntryName = "PPPoEd";
-                dialer.Credentials = new NetworkCredential(Username, Password);
-
+                if (Credential)
+                {
+                    dialer.EntryName = PbkEntryName;
+                    dialer.PhoneBookPath = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+                        @"Microsoft\Network\Connections\Pbk\rasphone.pbk");
+                    dialer.Credentials = dialer.GetNetworkCredential(dialer.EntryName, dialer.PhoneBookPath);
+                }else
+                {
+                    dialer.EntryName = "PPPoEd";
+                    dialer.PhoneBookPath = Path.Combine(
+                        AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
+                        @"PPPoEd.pbk");
+                    dialer.Credentials = new NetworkCredential(Username, Password);
+                }
+                
                 //__establish_connection__
                 Logger.Write("Connecting...");
                 connection = dialer.Connect();

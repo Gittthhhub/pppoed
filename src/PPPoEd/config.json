@@ -1,5 +1,7 @@
 ﻿{
-	"Username": "Username",
-	"Password": "Password",
+	"Credential": true, //Use Persisted Network Credential In %ProgramData%\Microsoft\Network\Connections\Pbk\rasphone.pbk
+	"PbkEntryName": "PPPoEd", //Dial-up Entry Name In Persisted rasphone.pbk
+	"Username": "Username", //Necessary If Credential Set To "false"
+	"Password": "Password", //Necessary If Credential Set To "false"
 	"ReDialTimeout": 15
 }

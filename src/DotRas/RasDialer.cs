@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DotRas.Internal;
 using DotRas.Internal.Abstractions.Services;
+using DotRas.Internal.Services.Security;
 
 namespace DotRas
 {
@@ -140,6 +141,17 @@ namespace DotRas
                 Options = Options,
                 OnStateChangedCallback = RaiseStateChangedEvent
             });
+        }
+
+        /// <summary>
+        /// Get NetworkCredential.
+        /// </summary>
+        /// <param name="entryName"></param>
+        /// <param name="phoneBookPath"></param>
+        /// <returns></returns>
+        public NetworkCredential GetNetworkCredential(string entryName, string phoneBookPath)
+        {
+            return ServiceLocator.Default.GetRequiredService<IRasGetCredentials>().GetNetworkCredential(entryName, phoneBookPath);
         }
 
         /// <summary>

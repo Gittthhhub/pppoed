@@ -52,6 +52,8 @@ namespace PPPoEDaemon
 
                 pppoe.Username = conf.GetSection("Username").Value;
                 pppoe.Password = conf.GetSection("Password").Value;
+                pppoe.Credential = bool.Parse(conf.GetSection("Credential").Value);
+                pppoe.PbkEntryName = conf.GetSection("PbkEntryName").Value;
                 pppoe.ReDialTimeout = int.Parse(conf.GetSection("ReDialTimeout").Value);
                 pppoe.DialUp();
             }
