@@ -12,7 +12,9 @@ LANGUAGE: [简体中文](README_ZH.md)
 ## Quick Start
 1. Install ```.NET Core 3.1``` runtime or sdk
 1. Clone the project to your Windows system
-1.  Edit ```config.json``` with your account from ISP
+1. Edit ```config.json``` with Dial-up entry from Settings or your account from ISP
+
+   If using existing credentials, set `PbkEntryName` to your pre-set connection name. Otherwise set `Credential` to `false` with `Username` and `Password` replaced
 1.  Run ```PPPoEd.exe``` directly
 
 ## As System Service
@@ -39,7 +41,7 @@ The Project is based on the MIT License.
 Copyright (c) 2020 xRetia Labs
 Copyright (c) 2020 dfc643
 All rights reserved.
- ```
+```
 
 
 -----

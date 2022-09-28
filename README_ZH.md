@@ -12,7 +12,9 @@
 ## 快速开始
 1. 安装 ```.NET Core 3.1``` 运行时或 SDK
 1. 将项目克隆到 Windows 系统
-1. 编辑 ```config.json```使用您从运营商获取的帐户 
+1. 编辑 ```config.json```使用您系统网络设置中的拨号名称或从运营商获取的帐户
+
+   使用现有拨号连接需要将`PbkEntryName`设为连接名称，直接连接需要设置`Username`和`Password`并将`Credential`设为`false`
 1. 直接运行 ```PPPoEd.exe```
 
 ## 作为系统服务
